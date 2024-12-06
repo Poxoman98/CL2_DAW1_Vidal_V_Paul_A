@@ -1,19 +1,36 @@
 package pe.cibertec.CL2_DAW1_VIDAL_VIVANCO_PAUL_ANDRE.entity;
 
-import java.util.Date;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+import java.util.Date;
+import java.util.List;
+
+@Entity
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class film {
-    private Integer film_id;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+    private Integer filmId;
     private String title;
     private String description;
-    private Integer release_year;
-    private Integer language_id;
-    private Integer original_language_id;
-    private Integer rental_duration;
-    private Double rental_rate;
+    private Integer releaseYear;
+    private Integer languageId;
+    private Integer original_languageId;
+    private Integer rentalDuration;
+    private Double rentalRate;
     private Integer length;
-    private Double replacement_cost;
+    private Double replacementCost;
     private String rating;
-    private String special_features;
-    private Date last_update;
+    private String specialFeatures;
+    private Date lastUpdate;
+
+    @OneToMany(mappedBy = "language")
+    private List<film> films;
 }
