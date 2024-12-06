@@ -12,7 +12,7 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class film {
+public class Film {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,5 +32,5 @@ public class film {
     private Date lastUpdate;
 
     @OneToMany(mappedBy = "language")
-    private List<film> films;
+    private List<Film> films;
 }
