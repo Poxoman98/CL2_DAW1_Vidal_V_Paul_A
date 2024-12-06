@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editar Film</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+  <h2>Editar Film</h2>
+  <form action="/films/edit/{{film.filmId}}" method="post">
+    <div class="form-group">
+      <label for="title">Título</label>
+      <input type="text" id="title" name="title" class="form-control" value="{{film.title}}" required>
+    </div>
+    <div class="form-group">
+      <label for="description">Descripción</label>
+      <textarea id="description" name="description" class="form-control">{{film.description}}</textarea>
+    </div>
+    <!-- Agregar otros campos según sea necesario -->
+    <button type="submit" class="btn btn-primary">Actualizar Film</button>
+  </form>
+</div>
+</body>
